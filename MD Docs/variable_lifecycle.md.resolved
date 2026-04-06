@@ -1,0 +1,68 @@
+# Declaration vs Initialization vs Assignment
+
+These are the 3 stages of a Variable's life.
+
+---
+
+## 1. Declaration (Registration)
+**"Mere paas ek variable hai."**
+
+You just tell JavaScript that a variable exists. You don't give it a value yet.
+*   **Hinglish:** Bas register kiya hai naam.
+
+```javascript
+let age; 
+// JS knows 'age' exists, but it is empty (undefined).
+```
+
+## 2. Initialization (First Value)
+**"Pehli baar value dena."**
+
+When you put a value into the variable for the **very first time**.
+*   **Hinglish:** Jab variable ko pehli baar koi cheez (value) milti hai.
+
+```javascript
+age = 25; 
+// Now 'age' is initialized with 25.
+```
+
+**Combined (Declaration + Initialization):**
+Most of the time, we do both together:
+```javascript
+let score = 0; // Declared 'score' AND Initialized with 0.
+```
+
+## 3. Assignment (Changing Value)
+**"Value badalna."**
+
+When you give a **new value** to a variable that already has one.
+*   **Hinglish:** Purani value hata ke nayi value dalna.
+
+```javascript
+score = 10; // Assignment (Re-assignment)
+```
+
+---
+
+## Summary Table
+
+| Term | Symbol | Meaning | Example |
+| :--- | :--- | :--- | :--- |
+| **Declaration** | `let x` | Creating the box | `let x;` |
+| **Initialization** | `= ...` | Putting the first item in the box | `x = 10;` |
+| **Assignment** | `=` | Swapping the item for a new one | `x = 20;` |
+
+---
+
+## Why [const](file:///c:/Users/dell/Desktop/WebDevelopment%20Interview/script.js#66-69) is different?
+[const](file:///c:/Users/dell/Desktop/WebDevelopment%20Interview/script.js#66-69) is strict. It demands **Declaration AND Initialization** strictly in the **same line**.
+*   **Correction:** You cannot declare (`const x;`) and initialize later (`x = 10;`).
+
+```javascript
+const pi = 3.14; // ✅ Correct (Both together)
+
+/* 
+const pi;      // ❌ Error: Missing initializer in const declaration
+pi = 3.14; 
+*/
+```
