@@ -89,6 +89,23 @@ Output: {
 Input: "  hello  ", n = 3
 Output: "hellohellohello"
 ```
+<details>
+  <summary>💡 Click to View Solution</summary>
+
+  ```javascript
+const str = " name  ";
+const times = 3
+const repeatStr = (str, times)=>{
+    let trimStr = str.trim();
+    let result = "";
+    for(let i = 0; i < 3; i++){
+        result = result + trimStr;
+    }
+    console.log(result);
+}
+repeatStr(str,times)
+```
+</details>
 
 **Approach:** 
 - Use `.trim()` to remove whitespace from both ends.
@@ -139,7 +156,26 @@ Output: 3
 - Use loop with counter or regex with `match()` and count matches.
 - Alternative: split by character and check length minus 1.
 
----
+<details>
+<summary>💡 Click to View Solution</summary>
+
+  ```javascript
+const str = "bananan";
+const target = "n";
+
+const countOcc = (str, target)=>{
+   let count = 0;
+   for(i of str){
+       if(i === target){
+           count ++;
+       }
+   }
+   console.log(count);
+}
+
+countOcc(str,target)
+  ```
+</details>
 
 ### 9. Replace All Occurrences
 **Problem:** Replace all "cat" with "dog" in a string.
@@ -152,6 +188,22 @@ Output: "I have a dog and another dog"
 
 **Approach:** 
 - Use `.replace()` with global regex flag `/g` or `.replaceAll()` method.
+
+<details>
+<summary>💡 Click to View Solution</summary>
+
+  ```javascript
+  // 1st method...
+  let str = "I have a cat and another cat";
+  let result = str.replaceAll("cat", "dog");
+  console.log(result);
+
+  // 2nd method...
+  
+
+  ```
+
+</details>
 
 ---
 
@@ -210,8 +262,29 @@ Output: false
 
 **Approach:** 
 - Use regex `/^[A-Za-z]+$/` to test if all characters are alphabetic.
+<details>
+<summary>💡 Click to View Solution</summary>
 
----
+  ```javascript
+const pureStr = (str) => {
+  for (let i of str) {
+    if (
+      (i >= 'a' && i <= 'z') ||
+      (i >= 'A' && i <= 'Z')
+    ) {
+      continue; // valid character
+    } else {
+      return false; // invalid character
+    }
+  }
+  return true;
+}
+```
+
+</details>
+
+console.log(pureStr("abc"));   // true
+console.log(pureStr("ab1"));   // false
 
 ### 14. Check if String Contains Only Digits
 **Problem:** Check if a string contains only numbers.
@@ -288,6 +361,32 @@ Output: "olleh"
 - Use two pointers from both ends and swap characters until they meet in middle.
 - Alternatively, iterate backwards and build new string.
 
+<details>
+<summary>💡 Click to View Solution</summary>
+
+  ```javascript
+// String and arry reverse 
+
+const arr = ["h","e","l","l","o"]
+// Output: ["o","l","l","e","h"]
+
+const str = "hello world";
+
+const reverseArr = (arr)=>{
+    let result = "";
+    
+    for(let i = arr.length-1; i>=0; i--){
+        // rev.push(arr[i])
+        result += arr[i]
+    }
+    console.log(result);
+}
+
+reverseArr(arr);
+
+  ```
+</details>
+
 ---
 
 ### 19. Count Vowels and Consonants
@@ -301,6 +400,43 @@ Output: { vowels: 3, consonants: 7 }
 
 **Approach:** 
 - Define vowels set, iterate through string, check if char is vowel using regex or set lookup.
+
+<details>
+<summary>💡 Click to View Solution</summary>
+
+  ```javascript
+
+
+const str = "Anurag Mourya";
+
+const strFunction = (s) => {
+    let vowels = 0;
+    let consonants = 0;
+
+    for (let i of s) {
+
+        // convert uppercase to lowercase manually
+        // if (i >= 'A' && i <= 'Z') {
+        //     i = String.fromCharCode(i.charCodeAt(0) + 32);
+        // }
+
+        // check only letters
+        if (i >= 'a' && i <= 'z') {
+            if (i === "a" || i === "e" || i === "i" || i === "o" || i === "u") {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    return { vowels: vowels, consonants: consonants };
+}
+
+console.log(strFunction(str));
+
+  ```
+</details>
 
 ---
 
@@ -317,6 +453,26 @@ Output: true
 
 **Approach:** 
 - Use two pointers from both ends, skip non-alphanumeric, compare lowercase versions.
+
+<details>
+<summary>💡 Click to View Solution</summary>
+
+  ```javascript
+
+const str = "level";
+const strFunction  = (s)=>{
+    const string = s.toLowerCase();
+    let revString = ""
+   for(let i= 0; i<=string.length-1; i++){
+      revString = string[i] + revString
+   }
+   
+   return revString === string;
+}
+console.log(strFunction(str))
+
+  ```
+</details>
 
 ---
 
