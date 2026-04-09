@@ -1,10 +1,25 @@
 
- # <h1 style="color:pink; text-align:center;">HTML AND CSS</h1>
+
+
+## 🗂️ Table of Contents
+
+- [🟡 HTML CSS](#-html-css)
+- [🟢 Javascript](#-javascript)
+- [🟡 React JS](#-react-js)
+- [🔴 Coding Questions](#-Coding-Questions)
+
+
+
+
+
+
+ # 🟡 <h1 style="color:pink; text-align:center;"> HTML AND CSS</h1>
 ##
 
 
 
-<details>
+
+
 <summary>Solution</summary>
 
 ```javascript
@@ -115,7 +130,7 @@ https://chatgpt.com/g/g-p-69c77c61bafc819180f94e576fcbff62-react-js-interview/pr
 
 
 ##
- # <h1 style="color:pink; text-align:center;">JAVASCRIPT</h1>
+ # <h1 style="color:pink; text-align:center;">🟢 JAVASCRIPT</h1>
 
 
 ## <div style="color:yellow">Q. Difference between Var, Let and const.
@@ -453,6 +468,99 @@ console.log(lastRepeatedChar("fdderfgfsddcgh")); // Output: 'd'
 const arr1 = [1,2,3]// 
 const arr1 = [4,5,6]// output will must be a [1,2,3,4,5,6]
 // Approch--------
+```
+
+## <div style="color:yellow">Q. What are pure function in js
+
+- Same input → always same output
+
+```js
+// pure function 
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5
+console.log(add(2, 3)); // 5 (always same)
+
+// impure function
+
+let count = 0;
+function addValue(num) {
+  count += num;
+  return count;
+}
+```
+
+## <div style="color:yellow">Q. Side Effect in js
+
+- Side effects in JavaScript means when a function changes something outside its own scope, or interacts with external systems.
+
+- Side effects happen when a function modifies external data or state.
+- A side effect occurs when a function affects something outside its local scope.
+- In React we try to control them using hooks like useEffect.
+
+```js
+let count = 0;
+function addValue(num) {
+  count += num;
+  return count;
+}
+```
+## <div style="color:yellow">Q. What is Generator Function
+
+- “A generator function is a special type of function in JavaScript that can pause and resume its execution. It is defined using function* and uses the yield keyword.
+
+- Unlike normal functions, it does not execute completely at once. Instead, it returns an iterator and we can control the execution step by step using the .next() method.”
+
+```js
+function* numbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = numbers();
+
+console.log(gen.next()); // { value: 1, done: false }
+console.log(gen.next()); // { value: 2, done: false }
+console.log(gen.next()); // { value: 3, done: false }
+console.log(gen.next()); // { value: undefined, done: true }
+```
+## <div style="color:yellow">Q. What is optional chaining?
+
+- “Optional chaining is a JavaScript feature that allows us to safely access nested object properties without getting errors if something is undefined or null.
+
+-Optional chaining helps avoid errors while accessing deeply nested properties by safely returning undefined instead of breaking the code
+
+```js
+// without optional chaning. 
+const user = {};
+console.log(user.address.city); // ❌ Error
+
+// with optional chaining
+const user = {};
+console.log(user?.address?.city); // ✅ undefined (no error)
+```
+
+
+## <div style="color:yellow">Q. What is nullish coalescing?
+
+- “Nullish coalescing is used to provide a default value when a variable is null or undefined. It uses ??”
+
+- Nullish coalescing returns the right-hand value only when the left-hand value is null or undefined, making it safer than using OR (||) for default values.
+
+
+
+```js
+let name = null;
+let result = name ?? "Guest";
+console.log(result); // Guest
+
+let count = 0;
+console.log(count || 10); // 10 ❌ (0 is treated as false)
+console.log(count ?? 10); // 0 ✅ (only null/undefined replaced)
+
 ```
 
 ##

@@ -8,7 +8,7 @@
 
 ## 🗂️ Table of Contents
 
-- [🟢 Easy Level Questions](#-easy-level-questions)
+- [🟢 Easy Level Questions](#-easy-level-questios)
 - [🟡 Medium Level Questions](#-medium-level-questions)
 - [🔴 Hard Level Questions](#-hard-level-questions)
 - [⚫ Expert Level Questions](#-expert-level-questions)

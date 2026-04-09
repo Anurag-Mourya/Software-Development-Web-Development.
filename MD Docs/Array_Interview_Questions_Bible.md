@@ -1340,22 +1340,21 @@ Output: 45
 **Solution:**
 ```javascript
 function secondLargest(arr) {
-    let firstSmallest = -Infinity, secondSmallest = -Infinity;
+    let first = -Infinity, second = -Infinity;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > firstSmallest) {
-            secondSmallest = firstSmallest;
-            firstSmallest = arr[i];
-        } else if (arr[i] > secondSmallest && arr[i] !== firstSmallest) {
-            secondSmallest = arr[i];
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] !== first) {
+            second = arr[i];
         }
     }
-    return secondSmallest;
+    return second;
 }
 ```
 
 **Approach:** 
-- Track the largest and second largest while iterating, updating them when finding larger values.
-- Handle duplicates by ensuring second largest is strictly less than first.
+- just reverse the sign < and do Infinity from largest.
 
 ---
 
@@ -1371,18 +1370,24 @@ Output: 10
 
 **Solution:**
 ```javascript
-function secondSmallest(arr) {
-    let first = Infinity, second = Infinity;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < first) {
-            second = first;
-            first = arr[i];
-        } else if (arr[i] < second && arr[i] !== first) {
-            second = arr[i];
+const secondSmallest = (arr) => {
+    let firstNo = Infinity;
+    let secondNo = Infinity;
+
+    for (let i of arr) {
+        if (i < firstNo) {
+            secondNo = firstNo;
+            firstNo = i;
+        } else if (i < secondNo && i !== firstNo) {
+            secondNo = i;
         }
     }
-    return second;
-}
+
+    return secondNo === Infinity ? null : secondNo;
+};
+
+let arr = [5, 1, 9, 3, 8, 7, 6];
+console.log(secondSmallest(arr));
 ```
 
 **Approach:** 
