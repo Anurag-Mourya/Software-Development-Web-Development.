@@ -22,8 +22,8 @@
 // Var is only accessible inside the function not block.
 
 function varAccessible() {
-    var myName = "Anurag";
-    console.log("Inside fucntion with var->", myName);// accessible ✅
+  var myName = "Anurag";
+  console.log("Inside fucntion with var->", myName);// accessible ✅
 }
 varAccessible();
 // console.log("Outside fucntion with var->", myName);// 01.Day.js:27 Uncaught ReferenceError: myName is not defined ❌
@@ -31,7 +31,7 @@ varAccessible();
 // but If we do same thing with block then it is accessibale completelly.
 
 if (true) {
-    var aNum = 3434;
+  var aNum = 3434;
 }
 console.log("Outside block with var->", aNum);// accessible ✅
 
@@ -43,28 +43,28 @@ console.log("Outside block with var->", aNum);// accessible ✅
 // examples?
 
 if (true) {
-    let a = 10;
+  let a = 10;
 }
 
 console.log(a); // ❌ ReferenceError
 
 
 function test() {
-    const b = 20;
-    console.log(b); // ✅
+  const b = 20;
+  console.log(b); // ✅
 }
 
 console.log(b); // ❌ ReferenceError
 
 {
-    let x = 1;
+  let x = 1;
 
-    {
-        let y = 2;
-        console.log(x); // ✅
-    }
+  {
+    let y = 2;
+    console.log(x); // ✅
+  }
 
-    console.log(y); // ❌
+  console.log(y); // ❌
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -84,3 +84,20 @@ console.log(b); // ❌ ReferenceError
 
 // > Define the mutability.
 // > Define the hoisting. 
+
+
+
+
+document.getElementById("myTextarea").onpaste = null;
+null
+document.querySelector('.note-editable').addEventListener('paste', function (e) {
+  e.stopPropagation();
+}, true);
+undefined
+$('#myTextarea').summernote({
+  callbacks: {
+    onPaste: function (e) {
+      // allow paste (do nothing)
+    }
+  }
+});

@@ -276,7 +276,7 @@ console.log(copy.func); // undefined ❗
 - Working - An object is kept in memory if it is reachable If it is not reachable → it will be deleted so he main concept is Reachability
 
 
-## <div style="color:yellow">Q. WeakMap nad Weakset in JS.Explain browser rendering pipeline.
+## <div style="color:yellow">Q. WeakMap and Weakset in JS.Explain browser rendering pipeline.
 
 -“WeakMap and WeakSet store objects with weak references, meaning they do not prevent garbage collection. WeakMap stores key-value pairs with object keys, while WeakSet stores only unique objects. They are mainly used to avoid memory leaks and store private data.”
 
@@ -286,7 +286,7 @@ console.log(copy.func); // undefined ❗
 - Browser rendering pipeline is the process by which the browser converts HTML, CSS, and JavaScript into a visible web page on the screen.
 It involves parsing code, building structures like DOM and CSSOM, creating layout, and finally painting pixels on the screen.
 
-## <div style="color:yellow">Q. Async, Await and Promice.
+## <div style="color:yellow">Q. Async, Await and Promise.
 - Async/await is built on top of promises and We can use .then() and .catch() with async functions because they return promises,
 - Together, async, await they help write asynchronous code in a cleaner and more readable way.
 - The async keyword is used to declare an asynchronous function and it always returns a promise.
