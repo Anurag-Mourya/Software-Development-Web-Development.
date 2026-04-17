@@ -9,7 +9,7 @@ const user = {
 // console.log(Object.keys(user))// ["name", "age"].
 
 // 2. Object.values()
-//def- Return an array like .keys(), with values. 
+//def- Return an array with values. 
 //ex- From above user example the out put is- 
 // console.log(Object.values(user));// ["Anurag", 28].
 
@@ -21,7 +21,8 @@ const user = {
 
 
 //////////////////////Object Prototypes. //////////////////////////////
-// def- Prototype is an object that is automatically attached to every JavaScript object, from which it can inherit properties and methods. Function also have a prototype
+// def- Prototype is an object that is automatically attached to every JavaScript object, from which it can inherit properties and methods. Function also have a prototype//// In JavaScript, a prototype is a mechanism that allows objects to inherit properties and methods from other objects. It’s a core concept behind JavaScript’s object-oriented behavior
+
 // Why we use - Instead of copying methods again and again, we use prototype.
 // ex. -  If we use .__proto__) we can see all the object that attached with js object. 
 const user1 = {

@@ -15,8 +15,9 @@
 
 // Infinity and NaN is Number data type and typof null is object. 
 
-// undefine = The Variable is declered but not assigned some value inside it or a variable is accessing even befoure initialize it at the case of var. 
+// undefine = The Variable is declered but not assigned some value inside it or a variable is accessing even before initialize it at the case of var. 
 // example of undefined
+
 let x;
 // console.log(x); //undefined not an error. 
 
@@ -58,26 +59,29 @@ console.log(typeof NaN)// number.
 // Def- Type coercion is automatic conversion of data types by JavaScript during operations.
 // ex- "5" + 2 = "52", String → Number
 
-//////////// Type Coercion ////////
-// Def- Type Conversion means the developer manually converts one data type into another.
-// ex- Number("123");   // 123
-// parseInt("123"); // 123
-// +"123";          // 123
-
 // importanct type coresion
 console.log(2 * "3");   // 6
 console.log(2 * "a");   // NaN (Not a Number)
 console.log("5" - 2);   // 3
 console.log("5" + 2);   // "52" (string concatenation)
 
+
+//////////// Type Conversion ////////
+// Def- Type Conversion means the developer manually converts one data type into another.
+// ex- Number("123");   // 123
+// parseInt("123"); // 123
+// +"123";          // 123
+
+
+
 ///////////////////// parseInt va Number comparision ////////////
 
 // | Feature             | `parseInt()`     | `Number()`      |
 // | ------------------- | ---------------- | --------------- |
 // | Converts            | String → Integer | Any → Number    |
-// | Decimal support     | ❌ No             | ✅ Yes           |
-// | Stops at non-number | ✅ Yes            | ❌ No            |
-// | Radix support       | ✅ Yes            | ❌ No            |
+// | Decimal support     | ❌ No             | ✅ Yes        |
+// | Stops at non-number | ✅ Yes            | ❌ No         |
+// | Radix support       | ✅ Yes            | ❌ No         |
 // | Strictness          | Loose            | Strict          |
 // | "100px"             | 100              | NaN             |
 // | Use case            | Extract number   | Validate number |

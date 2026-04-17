@@ -3,9 +3,9 @@
 // let age = 25;//Initialization
 
 //////////////SCOPE CONFUTION let var and const//////////////////
-// Def. fo Scope - Scope means: where a variable can be used in your code.
+// Def. Scope - Scope means: where a variable can be used in your code.
 
-// True Statement
+// True Statement 
 
 // 1.var → function scope
 
@@ -54,7 +54,7 @@ function test() {
   console.log(b); // ✅
 }
 
-console.log(b); // ❌ ReferenceError
+console.log(b); // ❌ ReferenceError 
 
 {
   let x = 1;

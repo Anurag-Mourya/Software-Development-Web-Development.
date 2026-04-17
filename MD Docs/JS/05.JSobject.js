@@ -17,7 +17,7 @@ const user = {
 ///////////this////////////////////////
 // Def. There is different types of uses of this . 
 
-// 1. this refers to the object that is calling the function.
+// 1. If this inside the object inside function-  this refers to the object that is calling the function.
 // ex. 
 const user1 = {
     name: "Anurag",
@@ -33,7 +33,7 @@ const user1 = {
 
 
 ////////////////Spred (...) Operator////////////////
-// Def- Sperd operator copies the properties of object and and merge into new object. 
+// Def- Spred operator copies the properties of an object and and merge into new object. 
 
 // ex- 
 const objA = { Aname: "anurag", Aage: 27 };
@@ -41,7 +41,7 @@ const objB = { name: "krishan", age: 29 }
 const newSpred = { ...objA, ...objB }
 
 // console.log(newSpred)
-// Trick - If we have same property key and merge with spred operator then the last object property is fetch ... is not allows dublicacy. 
+// Trick - If we have same property key and merge with spred operator then the last object property is fetch... is not allows dublicacy. 
 
 // With spred we can - 1. Copy object, 2. Merge Object. 3. Overwrite the property. 
 
@@ -61,15 +61,26 @@ const b = { state: "Madhya Pradesh" }
 
 // Interviwe Questions.....
 // 1.Spread vs Reference
+
+
+// here example first - 
+// Objects in JavaScript are stored by reference
+// b1 = a1 does NOT create a new object
+// Both a1 and b1 point to the same memory location
 const a1 = { x: 1 };
 const b1 = a1;
-console.log(b1)
+console.log(b1); // { x: 1 }
 b1.x = 2;
-console.log(a1.x); // 2 ❌
+console.log(a1.x); // 2 ❌ (changed!)
 
-const b11 = { ...a };
+// Correct Spread Example
+// Explanation (Shallow Copy)
+// { ...a1 } creates a new object (copy)
+// Now b11 and a1 are different objects
+// 👉 So changing b11 does NOT affect a1
+const b11 = { ...a1 };
 b11.x = 2;
-console.log(a1.x); // 2 ✅
+console.log(a1.x); // 1 ✅ (unchanged)
 
 
 /////////////////////////////Objects Methods. Call, Apply And Bind.(Not only for js ojects)  //////////////////////////////////////
@@ -96,7 +107,7 @@ greet.call(person2, "Surat")// now this is the second part of definition is - ar
 
 // Conclusion - So if we combine both the definitions the full definitions is satisfy with example. 
 
-// 2.  Apply - is used to call a function immediately with a specific this value and arguments passed in to array.
+// 2.  Apply - is used to call a function immediately with a specific this value and arguments passed in to an array.
 
 // ex- 
 const personInfo = {
@@ -105,11 +116,11 @@ const personInfo = {
 }
 
 function introduce(country, city, village) {
-    // console.log(`${this.name} and ${this.name1} is lives in ${country},  ${city}, ${village}`)
+    console.log(`${this.name} and ${this.name1} is lives in ${country},  ${city}, ${village}`)
 }
 introduce.apply(personInfo, ["India", "Rewa", "Deaupa"])
 
-// Conclusion - Same as call but the argumants passed in array. 
+// Conclusion - Same as call but the argumants passed in an array. 
 
 
 // 3."bind() is a method that returns a new function with a fixed this context. It does not execute immediately, and it allows passing arguments individually like call(). It is mainly used when we want to reuse a function later with a specific this value."
@@ -124,7 +135,7 @@ const user2 = {
     name: "Anurag"
 };
 
-const newGreet = greeting.bind(user2, " Anurag", " Krishna");
+const newGreet = greeting.bind(user2, " Anurag", " Krishna");// returns a newe function. 
 // newGreet();
 
 

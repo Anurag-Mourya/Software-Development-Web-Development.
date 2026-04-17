@@ -1,9 +1,10 @@
 
 // > JavaScript is Single Threaded = One task at a time.
 
+// Event loop definition flow--- Asynchronous> monitors > Empty > Processes sequence.
 
 //////////////////////////////////////Event Loop ///////////////////////////
-// The Event Loop is a core mechanism in JavaScript that enables asynchronous, non-blocking behavior. It continuously monitors the Call Stack and the Task Queues (Callback Queue and Microtask Queue). When the Call Stack becomes empty, the Event Loop first processes all tasks from the Microtask Queue (like Promises), and then processes tasks from the Callback Queue (like setTimeout). Web APIs handle asynchronous operations in the background and push their callbacks into these queues once completed."
+// The Event Loop is a core mechanism in JavaScript that enables asynchronous, non-blocking behavior. It continuously monitors the Call Stack and the Task Queues [Callback Queue(setTimeout, setInterval, events) and Microtask Queue(Promises, queueMicrotask)]. When the Call Stack becomes empty, the Event Loop first processes all tasks from the Microtask Queue (like Promises), and then processes tasks from the Callback Queue (like setTimeout). Web APIs handle asynchronous operations in the background and push their callbacks into these queues once completed."
 
 // Before Event Loop, we must know 3 things: 
 

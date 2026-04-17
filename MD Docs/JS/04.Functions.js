@@ -75,11 +75,11 @@ function normalFun(name, callbackFun) {
 function argFun() {
     console.log("Call back function is called.")
 }
-// normalFun("Anurag", argFun);
+normalFun("Anurag", argFun);
 //////////////////////////////
 
 //////////High Order Fucntions (HOF)///////////////
-// Definitions - . These type of function also returns a function. Or These types of functions also accept callback functions. examples = .map, .filter, .reduce they are return and when we pass fuction as call bcack then the calling fucntion is HOF, 
+// Definitions - . These type of function also returns a function. Or These types of functions also accept callback functions. examples = .map, .filter, .reduce they are return and when we pass fuction as call back then the calling fucntion is HOF, 
 
 function calculate(a, b, operation) {
     return operation(a, b);
@@ -199,9 +199,9 @@ test();
 
 // code examples./////
 
-// > Fucntions decleration and expression.
+// > Funtions decleration and expression.
 // > Hoisting. with Fucntions decleration and expression
-// > exampl of all types of functions (arrow, IIFE)
+// > examples of all types of functions (arrow, IIFE)
 // > Normal funciton have there own this and arrow function do not there own this code it.
 // > Rest parameter. function
-// >  Hight order fucntion and callbacks function. > HOF with return function. 
+// > Hight order fucntion and callbacks function. > HOF with return function. 
