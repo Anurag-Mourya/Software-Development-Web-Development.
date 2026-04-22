@@ -23,7 +23,6 @@
 // let num = 10;
 // num.toUpperCase(); //Uncaught TypeError: num.toUpperCase is not a function
 
-
 /////////////////////// RangeError: Maximum call stack size exceeded /////////////////////
 
 // When the size of call stack is exceeded.

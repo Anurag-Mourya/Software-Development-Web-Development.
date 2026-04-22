@@ -9,9 +9,9 @@
 // .splice() - .splice() is used to add, remove, or replace elements in an array. splice() is an array method used to add, remove, or replace elements by modifying the original array
 
 // What is does.
-// 1. Remove elements., > Remove a element > remove multiple elements.
-// 2. Add Elements., > Without Removing > Add elements with removing.
-// 3. Replace Elements. >
+// 1. Remove elements.> Remove a element or remove multiple elements.
+// 2. Add Elements. > Without Removing or Add elements with removing.
+// 3. Replace Elements. 
 // 4. With negative Index.
 // 5. Remove all elements form index. 
 
@@ -20,13 +20,13 @@
 const arr = [12, 34, 53, 11, 56, 23, 63]
 
 // Remove a element.
-// arr.splice(3, 1)// 11 will remove. 
+// arr.splice(3, 1)// 11 will remove. //from index,  number to be remove//
 
 // Remove Multiple elements. 
-// arr.splice(1, 3)// remove 34 to 11
+// arr.splice(1, 3)// remove 34, 53, 11
 
 // Add elements without removing. 
-// arr.splice(2, 0, 35, 36)// after 34 add 35,36
+// arr.splice(2, 0, 35, 36)// after 34 add 35,36.. //from index-1,0, number to be added.
 
 // Add element with removing.  // this is also the ex. of replace. 
 // arr.splice(4, 2, 12, 13)// add element at the place of 56 and 23 is 12, 13.

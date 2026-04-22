@@ -12,8 +12,8 @@ for (let val of names) {
 }// Anurag, Krishna same as sting.....
 
 
-// ///////////////////////////for ..... in loops.(Iterates keys) ///////////////////
-//Def-  Used to iterate over keys (properties) of an object.
+// ///////////////////////////for....  in loops.(Iterates keys) ///////////////////
+// Def-  Used to iterate over keys (properties) of an object.
 
 // ex- 
 const userDetails = {

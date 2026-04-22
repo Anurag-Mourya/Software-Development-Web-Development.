@@ -65,6 +65,24 @@ function getFirstAndLast(arr) {
         last: arr[arr.length - 1]
     };
 }
+
+2nd method.
+const arr = [1, 2, 3, 4, 5,1,2];
+
+const arrFun = (a)=>{
+   let output = {first:null,last:null};
+    
+   for(let i = 0; i<a.length; i++){
+       if(i === 0){
+           output.first = a[i];
+       }
+       if(i===a.length-1){
+           output.last = a[i]
+       }
+   }
+console.log(output)
+}
+arrFun(arr)
 ```
 
 **Approach:** 
@@ -302,6 +320,8 @@ Output: [5, 4, 3, 2, 1]
 
 **Solution:**
 ```javascript
+
+// method 1
 function reverseArray(arr) {
     const result = [];
     for (let i = arr.length - 1; i >= 0; i--) {
@@ -309,6 +329,22 @@ function reverseArray(arr) {
     }
     return result;
 }
+
+// method 2
+const arr2 = [4, 5, 6];
+
+const reverseArr = (a2) => {
+   const copy = [];
+   let index = a2.length - 1;
+
+   for (let val of a2) {
+      copy[index] = val;
+      index--;
+   }
+
+   console.log(copy);
+}
+reverseArr(arr2);
 ```
 
 **Approach:** 
@@ -421,12 +457,15 @@ Output: 9
 
 **Solution:**
 ```javascript
-function findMax(arr) {
-    let max = arr[0];
-    for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > max) max = arr[i];
-    }
-    return max;
+const arr2 = [4, 5, 6]
+const arrManupulation = (a1,a2)=>{
+ let max = null;
+ for(let i of a2){
+     if(max<i){
+         max = i;
+     }
+ }
+ console.log(max)
 }
 ```
 
@@ -448,6 +487,7 @@ Output: 1
 
 **Solution:**
 ```javascript
+// method 1
 function findMin(arr) {
     let min = arr[0];
     for (let i = 1; i < arr.length; i++) {
@@ -455,6 +495,18 @@ function findMin(arr) {
     }
     return min;
 }
+// method 2
+const arr2 = [4, 5, 6]
+const arrManupulation = (a1,a2)=>{
+ let max = Infinity;
+ for(let i of a2){
+     if(max>i){
+         max = i;
+     }
+ }
+ console.log(max)
+}
+
 ```
 
 **Approach:** 
@@ -560,6 +612,8 @@ Output: [1, 2, 3, 4, 5]
 
 **Solution:**
 ```javascript
+
+// method 1
 function removeDuplicates(arr) {
     const result = [];
     for (let i = 0; i < arr.length; i++) {
@@ -567,6 +621,28 @@ function removeDuplicates(arr) {
             result.push(arr[i]);
         }
     }
+    return result;
+}
+
+// method 2 without include
+function removeDuplicates(arr) {
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let found = false;
+
+        for (let j = 0; j < result.length; j++) {
+            if (result[j] === arr[i]) {
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            result.push(arr[i]);
+        }
+    }
+
     return result;
 }
 ```
@@ -589,6 +665,25 @@ Output: [1, 2, 3, 4, 5, 6]
 
 **Solution:**
 ```javascript
+// method 1 // Using Recursion.
+const nestA = [1, [2, [3, [4]], 5]];
+
+function recursive(arr, flatArr = []) {
+
+    for (val of arr) {
+        if (Array.isArray(val)) {
+            recursive(val, flatArr);
+        } else {
+            // console.log(flatArr)
+            flatArr.push(val);
+        }
+    }
+
+    return flatArr
+
+}
+
+// method 2
 function flattenArray(arr) {
     const result = [];
     for (let i = 0; i < arr.length; i++) {

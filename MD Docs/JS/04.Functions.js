@@ -147,7 +147,7 @@ function test() {
 
 // x is declared in the global scope
 // test() is in a function scope
-// A function can access variables from its outer scope
+// A function can access variables from its outer (parent) scopes where it was defined.
 // This behavior is called Lexical Scope
 
 

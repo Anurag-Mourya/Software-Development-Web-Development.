@@ -60,7 +60,7 @@ setTimeout(() => {// While running it goes to web apis
 
 // ////////////////example of these queues /////////////////
 
-console.log("Start");
+// console.log("Start");
 // callback queue
 setTimeout(() => {
     console.log("Call back queue")

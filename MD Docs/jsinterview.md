@@ -45,7 +45,8 @@ if (true) {
 
 ## 4. Lexical Scope
 - JavaScript uses lexical (static) scoping.
-- A function can access variables from its own scope and outer (parent) scopes where it was defined.
+- A function can access variables from its outer scope
+- A function can access variables from its outer (parent) scopes where it was defined.
 
 ```js
 const outer = "I am outside";
@@ -73,6 +74,10 @@ parent();
 
 # Promises, Stages, Callbacks, and Async/Await
 
+## Interview Definition
+- A **Promise** in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.
+
+
 ## Interview Question
 **What are promises, what are their stages, and how do they differ from callbacks and async/await?**
 
@@ -81,8 +86,6 @@ parent();
 - It helps us handle operations like API calls, file reading, and timers in a cleaner way.
 - Main purpose: avoid deeply nested callbacks and write readable async code.
 
-## Interview Definition
-- A **Promise** in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation and its resulting value.
 
 ## Promise Stages (States)
 1. **Pending**

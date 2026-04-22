@@ -3,41 +3,18 @@
 
 ## 🗂️ Table of Contents
 
-- [🟡 HTML CSS](#-html-css)
+- [HTML CSS](#-html-css)
 - [🟢 Javascript](#-javascript)
 - [🟡 React JS](#-react-js)
-- [🔴 Coding Questions](#-Coding-Questions)
+- [🔴 Other Topics](#-other-topics)
 
 
 
 
 
 
- # 🟡 <h1 style="color:pink; text-align:center;"> HTML AND CSS</h1>
+ # <h1 style="color:pink; text-align:center;"> HTML AND CSS</h1>
 ##
-
-
-
-
-
-<summary>Solution</summary>
-
-```javascript
-console.log([1,2,3] + [2,3,4]) // string - 1,2,32,3,4.
-
-console.log(0.1 + 0.4 === 0.5) // true.
-
-console.log(0.1 + 0.2 === 0.3) // false.
-// false because of binary representation
-// 0.1 is 0.0001100110011001100110011001100110011001100110011001101...
-// 0.2 is 0.001100110011001100110011001100110011001100110011001101...
-// Then we add these it gonna false.
-
-
-
-
-The answere of these question are in -  GPT this link
-https://chatgpt.com/g/g-p-69c77c61bafc819180f94e576fcbff62-react-js-interview/project
 
  ## <div style="color:yellow"> Q. What are reflow and repaint. 
  ## <div style="color:yellow"> Q. What are the semantic elements and why we use these element, given an examples also?
@@ -102,14 +79,14 @@ https://chatgpt.com/g/g-p-69c77c61bafc819180f94e576fcbff62-react-js-interview/pr
 }
 ```
 
-## <div style="color:yellow">Q. Define Local, Sessition and Cookee storage.
+## <div style="color:yellow">Q. Define Local Storage, Session Storage and Cookee storage.
 
-- Basically Local, Sessition and Cookees are the web storage or web apis that allows a browser to the clint to store any data. 
+- Basically Local, Storage and Cookees are the web storage or web apis that allows a browser to the clint to store any data. 
 
 #### Local Storage. 
 - Local Storage is a browser storage that stores data with no expiration time. Data remains even after browser is closed.
 - It stores data up to 5 md. 
-- It shared data accross the tab from the origin
+- It shared data accross the tab from the origin.
 - Local Storage and Session Storage store data in key–value pairs, where both key and value are always stored as strings.
 - Best for Dark and light theme, Language Preference, UI Setting. 
 
@@ -117,8 +94,8 @@ https://chatgpt.com/g/g-p-69c77c61bafc819180f94e576fcbff62-react-js-interview/pr
 - Session Storage stores data only for one browser tab session. Data is deleted when tab is closed.
 - It does not shared data to the tab, Shared only open tab. 
 - It stores data up to 5 md. 
-- Local Storage and Session Storage store data in key–value pairs, where both key and value are always stored as strings.
-- Bes for store (Best for temporary data) like Form Data, Opt Flow, Temporary state
+- Local Storage and Session Storage store data in key–value pairs, where both key and value are always stored as strings. 
+- Best for store (Best for temporary data) like Form Data, Opt Flow, Temporary state
 
 #### Cookee. 
 - Cookies are small data storage(4kb) in the browser and sent to the server with every HTTP request.
@@ -185,6 +162,8 @@ https://chatgpt.com/g/g-p-69c77c61bafc819180f94e576fcbff62-react-js-interview/pr
 #### Debouncing. 
 - Debouncing is ensure the function is call for a given delay if user stop trigering an event. 
 
+#### Throttling. 
+- Throttling is a technique that limits how often a function can run, even if an event is triggered many times.
 
 
 
@@ -279,6 +258,21 @@ console.log(copy.func); // undefined ❗
 ## <div style="color:yellow">Q. WeakMap and Weakset in JS.Explain browser rendering pipeline.
 
 -“WeakMap and WeakSet store objects with weak references, meaning they do not prevent garbage collection. WeakMap stores key-value pairs with object keys, while WeakSet stores only unique objects. They are mainly used to avoid memory leaks and store private data.”
+
+```js
+
+// Example of Weak map
+const wm = new WeakMap();
+let obj = { name: "A" };
+wm.set(obj, "Hello");
+console.log(wm.get(obj)); // Hello
+
+// Example of Weak Set
+const ws = new WeakSet();
+let obj = { id: 1 };
+ws.add(obj);
+console.log(ws.has(obj)); // true
+```
 
 
 ## <div style="color:yellow">Q. Explain browser rendering pipeline.
@@ -564,7 +558,7 @@ console.log(count ?? 10); // 0 ✅ (only null/undefined replaced)
 ```
 
 ##
- # <h1 style="color:pink; text-align:center;">REACT JS</h1>
+ # <h1 style="color:pink; text-align:center;">🟡 REACT JS</h1>
 
 ## <div style="color:yellow">Q. Difference between Function and Class Components. 
 - Function Component → Simple function, uses Hooks, no this, modern approach
@@ -598,7 +592,7 @@ console.log(count ?? 10); // 0 ✅ (only null/undefined replaced)
 - After comparing, React finds only the changed parts and updates only those parts in the real DOM. This process is called reconciliation.
 
 ##
- # <h1 style="color:pink; text-align:center;">OTHER TOPICS.</h1>
+ # <h1 style="color:pink; text-align:center;">🔴 Other Topics</h1>
 
 ## <div style="color:yellow">Q. Tell me full testing process on your project.?
 
@@ -665,6 +659,26 @@ setTotal(600);
 - useCallback is used to memoize functions to prevent unnecessary re-creation on every render.
 - When your component re-renders frequently, functions can be recreated again and again, which may affect performance. useCallback stores (memoizes) the function so that the same function instance is reused unless its dependencies change.
 
+```js
+// Key Difference. 
+
+// Use Memo
+useMemo memoizes a value (result of a function)
+const result = useMemo(() => expensiveFunction(a, b), [a, b]);
+// 👉 It runs the function and stores the result
+
+// useCallback
+// useCallback memoizes a function
+const handleClick = useCallback(() => {
+  console.log("Clicked");
+}, []);
+// 👉 It stores the function itself, not its result
+
+
+// 🔥 Key Difference (easy to remember)
+// useMemo → value
+// useCallback → function
+```
 #### When NOT to Use. 
 - Calculation is simple/cheap(e.g., count * 2)
 - Component is small
