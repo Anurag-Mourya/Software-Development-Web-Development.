@@ -32,6 +32,17 @@ Output: 5
 
 **Solution:**
 ```javascript
+
+// method 1 
+const Fun = (a,a2) => {
+    let count = 0
+  for (let i of a) {
+      count++
+    }
+    return count;
+}
+
+// method 2
 function arrayLength(arr) {
     let count = 0;
     for (let i = 0; arr[i] !== undefined; i++) {
@@ -39,6 +50,8 @@ function arrayLength(arr) {
     }
     return count;
 }
+
+// 
 ```
 
 **Approach:** 
@@ -1434,18 +1447,20 @@ Output: 45
 
 **Solution:**
 ```javascript
-function secondLargest(arr) {
-    let first = -Infinity, second = -Infinity;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > first) {
+const secondLarge = (a)=>{
+    let first = -Infinity; let second = -Infinity; //-Infinity, It means a number(-Infinity) smaller than any other possible number.
+    
+    for(let i of a){
+        if(i>first){
             second = first;
-            first = arr[i];
-        } else if (arr[i] > second && arr[i] !== first) {
-            second = arr[i];
+            first = i;
+        }else if (i>second && i !==first){
+            second = i; 
         }
     }
-    return second;
+    return second
 }
+console.log(secondLarge(arr))
 ```
 
 **Approach:** 
@@ -1718,19 +1733,22 @@ Output: [2, 3]
 
 **Solution:**
 ```javascript
-function findDuplicates(arr) {
-    const seen = new Set();
-    const duplicates = new Set();
-    
-    for (let num of arr) {
-        if (seen.has(num)) {
-            duplicates.add(num);
-        } else {
-            seen.add(num);
-        }
-    }
-    return [...duplicates];
-}
+let arr = [4, 3, 2, 7, 8, 2, 3, 7,1];
+
+const Fun = (arr) => {
+   let result = [];
+   
+   for(let i = 0; i<arr.length; i ++ ){
+       for(let j = i+1; j<arr.length; j ++){
+           if(arr[i] === arr[j] && !result.includes(arr[j])){
+               result.push(arr[i]);
+           }
+       }
+   }
+   return result; 
+};
+
+console.log(Fun(arr));
 ```
 
 **Approach:** 
@@ -1753,13 +1771,29 @@ Output: [4, 5]
 
 **Solution:**
 ```javascript
-function findUniqueElements(arr) {
-    const frequency = {};
-    for (let num of arr) {
-        frequency[num] = (frequency[num] || 0) + 1;
+let arr = [4, 3, 2, 7, 8, 2, 3, 1];
+
+const findSingleValues = (arr) => {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+        }
+
+        if (count === 1) {
+            result.push(arr[i]);
+        }
     }
-    return arr.filter(num => frequency[num] === 1);
-}
+
+    return result;
+};
+
+console.log(findSingleValues(arr)); // [4, 7, 8, 1]
 ```
 
 **Approach:** 
@@ -1788,6 +1822,19 @@ function countEvenOdd(arr) {
     }
     return { even, odd };
 }
+
+// or 
+
+const Fun = (arr) => {
+    let format = {
+        even: 0,
+        odd: 0
+    };
+    for (let num of arr) {
+        num % 2 === 0 ? format.even++ : format.odd++;
+    }
+    return format;
+};
 ```
 
 **Approach:** 
@@ -1808,9 +1855,18 @@ Output: 9
 
 **Solution:**
 ```javascript
-function sumOddNumbers(arr) {
-    return arr.filter(x => x % 2 !== 0).reduce((a, b) => a + b, 0);
-}
+let arr = [1, 2, 3, 4, 5, 3]
+
+const Fun = (arr) => {
+ let sumOfOdd  = 0;
+ 
+ for(let i of arr){
+     i %2 !==0 ? sumOfOdd+=i:0; 
+ }
+ return sumOfOdd;
+};
+
+console.log(Fun(arr));
 ```
 
 **Approach:** 
@@ -1854,12 +1910,34 @@ Output: [5, 4, 3, 2, 1]
 
 **Solution:**
 ```javascript
+
+// 1st method
 function reverseManual(arr) {
     const result = [];
     for (let i = arr.length - 1; i >= 0; i--) {
         result.push(arr[i]);
     }
     return result;
+}
+
+// 2nd method
+const Fun = (arr) => {
+let mainArr = []
+for (let i = arr.length-1, j = 0; i>=0; i--, j++) {  
+    
+    mainArr[j] = arr[i]
+}
+return mainArr;
+}
+
+// 3rd method
+const Fun = (arr) => {
+let mainArr = []
+for (let i = arr.length-1, i>=0;) {  
+    
+    mainArr[mainArr.length] = arr[i]
+}
+return mainArr;
 }
 ```
 
@@ -1951,6 +2029,25 @@ Output: [1, 3, 12, 0, 0]
 
 **Solution:**
 ```javascript
+
+// method 1
+const Fun = (arr) => {
+    let newArr = [];
+    let zero = [];
+    
+    for(let i of arr){
+        // if(i===0){
+        //     zero.push(i);
+        // }else{
+        //     newArr.push(i);
+        // }
+        // or
+        i===0?zero.push(i):newArr.push(i)
+    }
+    return [...newArr, ...zero]
+}
+
+// method2
 function moveZerosToEnd(arr) {
     let nonZeroIndex = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -2026,17 +2123,13 @@ Use two-pointer technique: left pointer for negatives, right for positives, swap
 <summary><b>📝 Click to View Solution</b></summary>
 
 ```javascript
-function separatePosNeg(arr) {
-    let left = 0, right = arr.length - 1;
-    while (left < right) {
-        while (left < right && arr[left] < 0) left++;
-        while (left < right && arr[right] >= 0) right--;
-        if (left < right) {
-            [arr[left], arr[right]] = [arr[right], arr[left]];
-            left++; right--;
-        }
-    }
-    return arr;
+const Fun = (arr) => {
+   let positive = [];
+   let negative = [];
+   for(let i of arr){
+       i<0 ? positive[positive.length] = i :  negative[negative.length]=i
+   }
+   return [...negative, ...positive]
 }
 ```
 </details>
@@ -2427,6 +2520,36 @@ Output: [1, 2, 3, 4, 5, 6]
 
 **JavaScript:**
 ```javascript
+// method 1 loops. 
+const Fun = (a1,a2) => {
+  let pureArr = [...a1, ...a2];
+  let unionArr = []
+  
+  for(let i = 0; i<pureArr.length; i++){
+      for(let j = i+1; j<pureArr.length; j++){
+          if(pureArr[i] !== pureArr[j] &&!unionArr.includes(pureArr[i])){
+              unionArr.push(pureArr[i])
+          }
+      }
+  }
+  return unionArr;
+}
+
+// method 2 easy loops. 
+const Fun = (a1, a2) => {
+    let pureArr = [...a1, ...a2];
+    let unionArr = [];
+
+    for (let i = 0; i < pureArr.length; i++) {
+        if (!unionArr.includes(pureArr[i])) {
+            unionArr.push(pureArr[i]);
+        }
+    }
+
+    return unionArr;
+};
+
+// method 2 without loops in a line
 function union(arr1, arr2) {
     return [...new Set([...arr1, ...arr2])];
 }
@@ -2450,9 +2573,19 @@ Output: [2]
 
 **JavaScript:**
 ```javascript
-function intersection(arr1, arr2) {
-    const set = new Set(arr1);
-    return [...new Set(arr2.filter(x => set.has(x)))];
+// method 1 loops. 
+const Fun = (a1,a2) => {
+  let pureArr = [...a1, ...a2];
+  let unionArr = []
+  
+  for(let i = 0; i<pureArr.length; i++){
+      for(let j = i+1; j<pureArr.length; j++){
+          if(pureArr[i] === pureArr[j] &&!unionArr.includes(pureArr[i])){
+              unionArr.push(pureArr[i])
+          }
+      }
+  }
+  return unionArr;
 }
 ```
 </details>

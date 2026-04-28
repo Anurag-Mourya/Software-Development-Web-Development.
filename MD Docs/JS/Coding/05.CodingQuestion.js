@@ -119,7 +119,6 @@ for (let i = 0; i < arr2.length; i++) {
 }
 console.log(arr1)
 
-
     // method one. with filter() and indexOf()
     (function numbers() {
         const unique = num.filter((value, index, self) => self.indexOf(value) === index);
@@ -128,7 +127,7 @@ console.log(arr1)
 
 // method two. with .set()
 const unique = new Set(num);
-// console.log(unique)
+// console.log(unique) 
 
 
 ///////////////////////////////////// Reverse Each word in sentence //////////////////////////////
