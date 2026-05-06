@@ -65,9 +65,14 @@ HTML is the general name for HyperText Markup Language, and HTML5 is the modern 
 - A **tag** is the code inside angle brackets, such as `<p>` or `</p>`.
 - An **element** includes the opening tag, content, and closing tag.
 
-```html
-<p>This is an element.</p>
-```
+| Feature        | Tag                            | Element                             |
+| -------------- | ------------------------------ | ----------------------------------- |
+| Definition     | A markup symbol                | A complete HTML structure           |
+| Includes       | Only the tag itself            | Opening tag + content + closing tag |
+| Example        | `<h1>`                         | `<h1>Hello</h1>`                    |
+| Content inside | ❌ No                           | ✅ Yes                               |
+| Types          | Opening, closing, self-closing | Container or empty elements         |
+
 
 ### 5) What are attributes in HTML?
 
@@ -94,7 +99,7 @@ Use the `<a>` tag with `href`.
 <a href="https://example.com/">Go to Example</a>
 ```
 
-- **Absolute URL**: full path including protocol and domain.
+- **Absolute URL**: full path including protocol (The protocol is the first part of the URL. It tells the browser how to communicate with the server ex. https://, ftp://) and domain (The domain is the address of the website/server ex. www.example.com).
 - **Relative URL**: path relative to the current page or project.
 
 ```html
@@ -117,6 +122,15 @@ The `<img>` tag displays images. It commonly uses:
 
 - **Block-level elements** start on a new line and take full width.
 - **Inline elements** stay within the current line and use only required space.
+
+| Feature              | Block-level Elements       | Inline Elements         |
+| -------------------- | -------------------------- | ----------------------- |
+| Line break           | Start on new line          | Stay in same line       |
+| Width                | Full width                 | Content width only      |
+| Height/Width control | ✅ Yes                      | ❌ Limited               |
+| Nesting              | Can contain block & inline | Usually only inline     |
+| Examples             | `<div>`, `<p>`, `<h1>`     | `<span>`, `<a>`, `<em>` |
+
 
 ```html
 <div>This block starts a new line.</div>
@@ -152,10 +166,10 @@ The `<img>` tag displays images. It commonly uses:
 
 ### 11) What is the `<form>` tag and what do `action` and `method` do?
 
-The `<form>` tag collects user input and sends it to a server.
+The <form> tag in HTML is used to collect user input and send that data to a server.
 
-- `action` = where the data is sent
-- `method` = how the data is sent (`GET` or `POST`)
+- `action` = where the data is sent (URL of server).
+- `method` = how the data should be sent to the server. (`GET` or `POST`)
 
 ```html
 <form action="/submit" method="post">
@@ -610,6 +624,17 @@ Use `rel="alternate"` and `hreflang`.
 `<datalist>` provides autocomplete suggestions for an `<input>` field.
 
 ### 68) What is the difference between `defer` and `async` in `<script>`?
+
+The defer and async attributes in the script tag both improve page loading performance, but they control when and how JavaScript is executed in different ways.
+
+| Feature          | `async`              | `defer`            |
+| ---------------- | -------------------- | ------------------ |
+| Download         | Parallel             | Parallel           |
+| Execution time   | As soon as ready     | After HTML parsing |
+| Blocks parsing   | Yes (when executing) | No                 |
+| Order guaranteed | ❌ No                 | ✅ Yes              |
+| DOM ready needed | ❌ Not required       | ✅ Yes              |
+
 
 | `defer` | `async` |
 |---|---|

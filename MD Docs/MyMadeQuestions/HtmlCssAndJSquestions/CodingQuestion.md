@@ -1,4 +1,4 @@
-
+                 Array bashed Questions.
  * Easy 
 
 > Calculate the number of elements in an array without using the built-in `.length` property.
@@ -6,6 +6,9 @@
 > Access the first and last element of an array.
 
 > Check if an array contains a specific element.
+
+> Append a new element to the end without using .push().
+> Insert a new element at the start without using .unshift().
 
  * Medium 
 
@@ -36,3 +39,8 @@
 > Find the Intersection of Two Arrays.
 
 > Check if Array is Sorted in Descending or Ascending Order return true and false. 
+
+
+ Sting bashed Questions.
+
+ > 

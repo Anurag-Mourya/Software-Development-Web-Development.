@@ -39,6 +39,28 @@ Output: { length: 11, first: "H", last: "d" }
 ```javascript
 Input: "Hello", "World"
 Output: "HelloWorld"
+
+// solution
+
+const strMethods= (s, ss)=>{
+    // return s+ss; // M-1
+    // return s.concat(ss) // M-2
+    
+    // M-3
+    let result = "";
+    
+    for(let i of s){
+       result += i; 
+    }
+    result += " ";
+    
+    for(let j of ss){
+        result += j
+    }
+    return result;
+}
+console.log(strMethods(str1, str2));
+
 ```
 
 **Approach:** 
@@ -54,6 +76,30 @@ Output: "HelloWorld"
 ```javascript
 Input: s = "Hello World", substring = "World"
 Output: true
+
+// Solution
+let str1 = "Hello World";
+let str2 = "World";
+
+// approch - Check each charactor of str1 to str2 = World, 
+const strMethods = (s, ss) => {
+    
+    for(let i = 0; i<=s.length-ss.length; i ++){
+        let temp = "";
+        
+        for(let j = 0; j<ss.length; j++){
+            temp += s[i+j];
+        }
+        
+        if(temp === ss) return true;
+    }
+    return false;
+   
+}
+
+// strMethods(str1, str2); 
+
+console.log(strMethods(str1, str2));
 ```
 
 **Approach:** 
@@ -73,6 +119,23 @@ Output: {
   lowercase: "hello world", 
   titleCase: "Hello World" 
 }
+
+
+//Solution of Title case 
+let str1 = "hello world";
+const strMethods = (s,ss) => {
+
+    let words = s.split(" ");
+    let result = [];
+
+    for (let i of words) {
+        if (i.length > 0) {
+            result.push(i[0].toUpperCase() + i.slice(1));
+        }
+    }
+    return result.join(" ");
+};
+console.log(strMethods(str1, str2));  
 ```
 
 **Approach:** 
@@ -80,6 +143,25 @@ Output: {
 - For title case: split by space, capitalize first letter of each word, then join.
 
 ---
+
+### 4.1 Remove spaces 
+
+```js
+let str1 = "  hello world  ";
+const strMethods = (s,ss) => {
+
+    let pureStr = "";
+    for(let i of s){
+        if(i !== " "){
+            pureStr += i
+        }
+    }
+    
+    return pureStr;
+
+};
+console.log(strMethods(str1, str2)); 
+```
 
 ### 5. Trim and Repeat
 **Problem:** Remove leading/trailing spaces and repeat the string n times.
@@ -93,6 +175,25 @@ Output: "hellohellohello"
   <summary>💡 Click to View Solution</summary>
 
   ```javascript
+
+  // M-1 Without Trim
+let str1 = "hello world";
+let n = 3;
+
+const strMethods = (s, n) => {
+
+    let result = "";
+
+    for (let i = 1; i <= n; i++) {
+        result += s;
+    }
+
+    return result;
+};
+
+console.log(strMethods(str1, n));
+
+// M-2 With Trim
 const str = " name  ";
 const times = 3
 const repeatStr = (str, times)=>{
@@ -104,6 +205,8 @@ const repeatStr = (str, times)=>{
     console.log(result);
 }
 repeatStr(str,times)
+
+
 ```
 </details>
 
@@ -194,12 +297,28 @@ Output: "I have a dog and another dog"
 
   ```javascript
   // 1st method...
-  let str = "I have a cat and another cat";
-  let result = str.replaceAll("cat", "dog");
-  console.log(result);
+  str1 = "I have a cat and another cat"
+  str2 = "dog"
+  const strMethods = (s, ss) => {
+    let arr = s.split(" ");
+    let newArr = [];
+
+    for (let i of arr) {
+        if (i === "cat") {
+            newArr.push(ss);
+        } else {
+            newArr.push(i);
+        }
+    }
+
+    return newArr.join(" ");
+};
+ 
 
   // 2nd method...
-  
+   let str = "I have a cat and another cat";
+  let result = str.replaceAll("cat", "dog");
+  console.log(result);
 
   ```
 
@@ -214,6 +333,25 @@ Output: "I have a dog and another dog"
 ```javascript
 Input: "Hello World Example"
 Output: "Hello-World-Example"
+
+
+// Solution
+
+let str1 = "I have a cat and another cat";
+
+ const strMethods = (s,ss) => {
+     let newStr = ""
+
+    for(let i of s){
+        if(i===" "){
+       newStr += "-"
+        }else{
+             newStr += i
+        }
+    }
+    return newStr;
+ };
+console.log(strMethods(str1, str2)); //I-have-a-cat-and-another-cat
 ```
 
 **Approach:** 

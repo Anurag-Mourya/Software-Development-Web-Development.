@@ -24,7 +24,7 @@ CSS3 is the latest version of CSS.
 |---------|-----|------|
 | **Capability** | CSS is capable of positioning texts and objects. CSS is somehow backward compatible with CSS3. | CSS3 is capable of making the web page more attractive and takes less time to create. If you write CSS3 code in CSS, it will be invalid. |
 | **Responsive Design** | Not supported in CSS | CSS3 supports responsive design. |
-| **Modularity** | CSS cannot be split into modules. | CSS3 can be broken down into modules. |
+| **Modularity** | CSS cannot be split into modules. | CSS3 can be broken down into modules Selectors ex.Box Model, Backgrounds & Borders, Animations, Flexbox, Grid layout etc.
 | **3D Animation & Transformation** | Cannot build 3D animation and transformation. | Supports all kinds of animation and transformations. |
 | **Performance** | Slower than CSS3 | Faster than CSS |
 
@@ -122,9 +122,11 @@ The .class selector is used to select all elements which belong to a particular 
 
 ## 8. When is it better to use logical properties (inline-/block-start/end) vs physical properties (top/right/…)
 
-**Logical Properties:** Use logical properties (like `margin-inline-start`, `padding-block-end`) when you want your layout to adapt to different writing modes, text directions (LTR/RTL), or vertical scripts—making your design more flexible and internationalized.
+In CSS, physical and logical properties differ mainly in how they handle layout directions.
 
-**Physical Properties:** Physical properties (like `margin-top`, `padding-right`) are more suitable when the layout is fixed to a left-to-right, horizontal writing environment and doesn't need to adjust for localization.
+Physical properties are the traditional way of styling elements using fixed directions like left, right, top, and bottom. For example, properties like margin-left or padding-top always apply to those exact sides, regardless of the language or writing mode. This works well for left-to-right layouts, but it becomes limiting when dealing with right-to-left languages like Arabic.
+
+Logical properties, introduced in modern CSS, solve this problem by using direction-aware terms like inline and block. Instead of margin-left, we use margin-inline-start, which automatically adjusts based on the text direction. So in a left-to-right layout it behaves like left, and in a right-to-left layout it behaves like right.
 
 ---
 
@@ -1440,7 +1442,7 @@ body {
 
 ## 3. What are SCSS variables?
 
-SCSS variables are declared with the `$` prefix and store reusable values throughout your stylesheet.
+SCSS variables are declared with the `$` (Dollar Sign) prefix and store reusable values throughout your stylesheet.
 
 **Syntax:**
 ```scss
@@ -1596,7 +1598,7 @@ The `&` symbol in SCSS refers to the parent selector. It allows you to reference
 
 ## 6. What are mixins in SCSS?
 
-Mixins are reusable blocks of code that can be included in multiple selectors. They help reduce code duplication and make your stylesheets more maintainable.
+Mixins are reusable blocks of code that can be included in multiple selectors. They help reduce code duplication and make your stylesheets more maintainable. We can also defines the parameter withing the minxins.
 
 **Syntax:**
 ```scss

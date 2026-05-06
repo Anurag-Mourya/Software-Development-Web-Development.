@@ -178,6 +178,19 @@ function addToEnd(arr, element) {
     arr[arr.length] = element;
     return arr;
 }
+
+// or with loops      
+function addToEnd(arr, element) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        newArr[i] = arr[i];
+    }
+
+    newArr[newArr.length] = element;
+
+    return newArr;
+}
 ```
 
 **Approach:** 
