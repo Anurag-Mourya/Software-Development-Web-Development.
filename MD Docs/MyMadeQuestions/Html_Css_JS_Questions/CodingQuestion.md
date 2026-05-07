@@ -1,4 +1,4 @@
-                 Array bashed Questions.
+#### Array bashed Questions.
  * Easy 
 
 > Calculate the number of elements in an array without using the built-in `.length` property.
@@ -41,6 +41,14 @@
 > Check if Array is Sorted in Descending or Ascending Order return true and false. 
 
 
- Sting bashed Questions.
-
- > 
+#### Sting bashed Questions.
+ * Easy 
+ 
+> String Concatenation (Without + Operator).
+>  Check for Substring.
+> String Case Conversion, Title case.
+> Remove spaces. 
+> Count Occurrences of a Character. 
+> Replace All Occurrences.
+> Split a string by spaces and join it back with hyphens.
+> Remove leading/trailing spaces and repeat the string n times.
