@@ -407,10 +407,10 @@ Output: false
 const pureStr = (str) => {
   for (let i of str) {
     if (
-      (i >= 'a' && i <= 'z') ||
+      (i >= 'a' && i <= 'z') || //Here the comparision between ASCII/Unicode value 97(A) to 122(Z). 
       (i >= 'A' && i <= 'Z')
     ) {
-      continue; // valid character
+      continue; // Check next immediatily until if is false.
     } else {
       return false; // invalid character
     }
@@ -438,6 +438,25 @@ Output: false
 **Approach:** 
 - Use regex `/^\d+$/` or iterate and check `!isNaN(char)` for each character.
 
+
+```js
+
+// Solution
+let str1 = "12345";
+
+const digitMethod = (s) => {
+  for (let i of s) {
+    if (i >= '0' && i <= '9') {
+      continue;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(digitMethod(str1)); // true
+```
 ---
 
 ### 15. Remove Leading Zeros

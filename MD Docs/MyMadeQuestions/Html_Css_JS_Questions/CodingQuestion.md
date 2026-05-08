@@ -52,3 +52,5 @@
 > Replace All Occurrences.
 > Split a string by spaces and join it back with hyphens.
 > Remove leading/trailing spaces and repeat the string n times.
+> Check if String Contains Only Letters and numbers.
+> Remove leading zeros from numeric string. 

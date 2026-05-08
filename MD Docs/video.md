@@ -653,11 +653,12 @@ setTotal(600);
 - “Don’t recalculate if nothing changed”
 - useMemo is a hook that memoizes (caches/remember) the result of a calculation so it doesn’t run again unless dependencies change.
 - When your component re-renders frequently, some calculations run repeatedly and can slow down performance. useMemo stores the result of that calculation so it doesn’t run again unless useMemo its dependencies change
-
+- The result of a function (value, object, array).
 
 #### useCallback
 - useCallback is used to memoize functions to prevent unnecessary re-creation on every render.
 - When your component re-renders frequently, functions can be recreated again and again, which may affect performance. useCallback stores (memoizes) the function so that the same function instance is reused unless its dependencies change.
+-The function itself.
 
 ```js
 // Key Difference. 
