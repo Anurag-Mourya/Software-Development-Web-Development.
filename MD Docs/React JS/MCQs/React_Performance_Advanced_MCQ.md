@@ -26,10 +26,10 @@ This question tests your understanding of `React.memo` — one of React's primar
 ❌ **Incorrect.** `React.memo` has nothing to do with preventing state updates. State updates still happen normally inside a memoized component. `React.memo` only controls whether the component **re-renders** when its parent re-renders.
 
 **Option B: "Cache API responses"**
-❌ **Incorrect.** API response caching is handled by libraries like React Query, SWR, or by storing fetched data in state/context. `React.memo` is a rendering optimization tool — it memoizes **component render output**, not network data.
+❌ **Incorrect.** API response caching is handled by libraries like React Query, SWR(Stale While Revalidate), or by storing fetched data in state/context. `React.memo` is a rendering optimization tool — it memoizes **component render output**, not network data.
 
 **Option C: "Prevent unnecessary component re-renders"**
-✅ **Correct.** `React.memo` wraps a component and performs a shallow comparison of its props. If props haven't changed (by reference), React skips re-rendering that component, even if the parent re-rendered.
+✅ **Correct.** `React.memo` wraps a component and performs a shallow comparison(user = { name: "John" } compare only user not user.name) of its props. If props haven't changed (by reference), React skips re-rendering that component, even if the parent re-rendered.
 
 **Option D: "Optimize Redux store"**
 ❌ **Incorrect.** `React.memo` is a React core API, not a Redux tool. Redux has its own optimization mechanisms (`connect`'s `mapStateToProps`, `reselect` for memoized selectors).
@@ -60,10 +60,10 @@ This question tests the specific comparison strategy used by `React.memo` — cr
 ### Option-by-Option Breakdown
 
 **Option A: "Deep comparison"**
-❌ **Incorrect.** `React.memo` does **not** perform deep comparison by default. Deep comparison (recursively checking every nested property) is expensive and would often cost more than just re-rendering.
+❌ **Incorrect.** `React.memo` does **not** perform deep comparison by default. Deep comparison (recursively[Repeating the same process again and again for nested levels.] checking every nested property ex. const user = {name:"Anurag"} so deep comparison is user.name==="Anurag") is expensive and would often cost more than just re-rendering.
 
 **Option B: "Recursive comparison"**
-❌ **Incorrect.** Recursive comparison is essentially deep comparison. `React.memo` does not recursively traverse objects.
+❌ **Incorrect.** Recursive comparison is essentially(Basically) deep comparison. `React.memo` does not recursively traverse objects.
 
 **Option C: "Shallow comparison"**
 ✅ **Correct.** By default, `React.memo` performs a **shallow comparison** of props. It compares each prop using `===` (strict equality/reference comparison). For primitives, this checks value. For objects/arrays/functions, this checks reference identity.
@@ -101,7 +101,7 @@ Shallow comparison means comparing top-level prop references:
 <div id="q3" style="display: none; margin-top: 15px; padding: 20px; background: #092038; border-left: 4px solid #61dafb; border-radius: 6px;">
 
 ### What the Question Asks
-This question tests your ability to distinguish between React hooks and identify which one is designed for caching computed values.
+This question tests your ability to distinguish (To recognize or identify the difference between things.) between React hooks and identify which one is designed for caching computed values.
 
 ### Option-by-Option Breakdown
 
@@ -126,6 +126,16 @@ const sortedUsers = useMemo(() => {
   return users.sort((a, b) => a.score - b.score);
 }, [users]);
 ```
+
+### Extra 
+| Feature                | `useMemo`               | `React.memo`                 |
+| ---------------------- | ----------------------- | ---------------------------- |
+| Optimizes              | Calculated values       | Component rendering          |
+| Used inside component? | Yes                     | No                           |
+| Memoizes               | Result of calculation   | Entire component             |
+| Prevents               | Expensive recalculation | Unnecessary re-render        |
+| Type                   | Hook                    | Higher Order Component (HOC) |
+
 
 **Warning:** Don't overuse `useMemo`. The comparison overhead can exceed the benefit for simple calculations. Profile first!
 
@@ -186,7 +196,7 @@ function Parent() {
 
 **Which scenario can still cause a memoized component to re-render?**
 
-- **A.** Parent component re-renders with identical primitive props
+- **A.** Parent component re-renders with identical(The previous prop values and new prop values are equal according to shallow comparison.) primitive props
 - **B.** Context value changes
 - **C.** Component uses `React.memo()`
 - **D.** Component has no state

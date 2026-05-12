@@ -127,3 +127,35 @@ function a() {
   var a = 55;
 }
 
+
+// out put questions. 
+
+var x = 10;
+if (true) {
+  console.log(x);
+  var x = 20;
+}//undefined, Why? var is function-scoped, not block-scoped.
+
+//
+let x = 10;
+if (true) {
+  console.log(x);
+  let x = 20;
+}//ReferenceError: Cannot access 'x' before initialization
+
+//
+let x = 10;
+function footprint() {
+  console.log(x);
+  let x = 20;
+}
+footprint();// ReferenceError: Cannot access 'x' before initialization
+
+//
+var x = 10;
+function footprint() {
+  console.log(x);
+  var x = 20;
+}
+footprint();// undefined
+

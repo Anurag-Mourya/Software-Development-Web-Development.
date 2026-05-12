@@ -44,6 +44,57 @@ const obj = {
 // obj.normalFun()// normal Anurag
 
 
+
+/////////////////// Arrow Function and Normal Function ///////////////////////
+// Constructor Functions
+
+// DEF - 1. Constructor functions in JavaScript are special functions used to create multiple objects with the same structure and behavior.
+// 2. Constructor functions are normal JavaScript functions used with the new keyword to create multiple objects with the same properties and methods. They help in code reusability and object creation. Internally they work with prototypes, which is also the base of ES6 classes.
+
+
+// example - 
+// Instead of writing the same object again and again, we use a constructor function.”
+function User(name, age, email) {
+  this.name = name;
+  this.age = age;
+  this.email = email;
+}
+// Then create objects:
+const user1 = new User("Aman", 22, "aman@gmail.com");
+const user2 = new User("Sara", 25, "sara@gmail.com");
+console.log(user1);
+console.log(user2);
+
+
+// new keyword
+// “When we use the new keyword. new User()
+// JavaScript automatically:
+
+//1.  Creates a new empty object
+//2.  Sets this to that object
+//3.  Returns the object automatically”
+
+
+// Without new, the function behaves like a normal function.
+// ex. const p = Person("Aman", 22); // Wrong
+
+// Arrow Function as Constructor..
+// ex. 
+const Person = (name) => {
+  this.name = name;
+};
+
+const p = new Person("A");// TypeError
+// Why TypeError
+// Arrow Functions Cannot Be Constructors
+
+// Arrow functions:
+
+//1. do NOT have their own this
+//2. do NOT have prototype
+//3. cannot be called using new
+
+
 ////////////// Parameter and Argument. /////////////////////
 
 //Paremeter - Are the variables passed in function definitions. example = function name(params) {}
