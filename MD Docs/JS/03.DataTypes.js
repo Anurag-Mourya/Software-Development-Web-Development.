@@ -65,7 +65,39 @@ console.log(2 * "a");   // NaN (Not a Number)
 console.log("5" - 2);   // 3
 console.log("5" + 2);   // "52" (string concatenation)
 
+console.log(typeof typeof 1);// string
+console.log(typeof undefined);// string
 
+
+console.log([] + []);// is same "" + "" so the result is "". 
+// + have only two works in js Should I do math, or should I join strings(Concatination)?
+// But the [] is objects not number so the js convert in to ""
+// So JavaScript tries to convert them into a simpler value called a primitive. array.toString()
+// So the [].toString() is "". 
+// So the final result is 
+// [] + []
+// ↓
+// "" + ""
+// ↓
+// ""
+// + tries to combine values
+console.log([1, 2] + [3, 4])// is same "1,2" + "3,4" so the result is "1,23,4".
+// [1,2] + [3,4]
+// ↓
+// "1,2" + "3,4"
+// ↓
+// "1,23,4"
+
+// for object. 
+
+
+// because same for {} js convert into object.toString() primitive value.
+console.log([] + {})// "[object Object]"
+
+// When {} at first
+
+console.log({} + []) // 0 and {} is become empty block and ingnored. 
+// why {} is empty block and [] is "" =>When JavaScript sees: {} at the start of a statement, it thinks: {} code block, so js seen it empty block and ingnore it, but [] is "" this +"" is 0.
 //////////// Type Conversion ////////
 // Def- Type Conversion means the developer manually converts one data type into another.
 // ex- Number("123");   // 123
