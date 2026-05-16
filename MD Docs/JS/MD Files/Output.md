@@ -10,7 +10,7 @@ Why:
 
 # `[] + []`
 
-The `+` operator in JavaScript has 2 main works:
+The `+` operator in JavaScript has these main works:
 
 * Addition
 * String concatenation 
@@ -30,6 +30,11 @@ So:
 
 ```js id="gk3c6g"
 console.log([] + [])
+```
+
+```js
+[].toString() // ""
+[].toString() // ""
 ```
 
 Internally:
@@ -411,3 +416,77 @@ A. 0, 1, 4 <br>
 B. 0, 0, 0 <br>
 C. 9, 9, 9 <br>
 D. undefined, undefined, undefined
+
+----
+
+# Arrow Functin and Regural function 
+
+```js
+const obj = {
+    value: 42,
+    regular: function() { 
+        return this.value; 
+        },
+    arrow: () => this.value,
+
+    nested: {
+        value: 99,
+        regular: function(){
+            return this.value;
+        },
+        arrow: () => this.value
+    }
+};
+
+console.log(obj.regular());
+console.log(obj.arrow());
+console.log(obj.nested.regular());
+console.log(obj.nested.arrow());
+
+A. 42, 42, 99, 99
+B. 42, undefined, 99, 42
+C. 42, undefined, 99, undefined
+D. 42, 42, 99, undefined
+```
+
+
+## Basic Concepts. 
+
+### Regular Functions
+* A regular function gets this <br> from the object that calls it.
+```js
+obj.regular();
+obj.nested.regular();
+```
+
+### Arrow Functions
+* Arrow functions do not have their own this.
+* They take this from the surrounding <br> scope (lexical scope) otherwise undefined.
+
+
+
+
+
+
+# React Render "", 0 and NaN as a text node. 
+
+
+## These all are the falsy value.
+0
+false
+undefined
+null
+NaN
+""
+
+* But at the time of rendering only "", NaN and 0 are render on jsx. Because these are the Numbers. 
+* only for jsx
+
+```jsx
+0 || "fallback"          // 0
+false || "fallback"      // fallback
+undefined || "fallback"  // fallback
+null || "fallback"       // fallback
+NaN || "fallback"        // NaN
+"" || "fallback"         // ""
+```
