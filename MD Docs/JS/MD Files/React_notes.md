@@ -234,6 +234,7 @@ Now only SearchBox re-renders.
 
 > React render lifecycle- 
 
+```js
 setState/useState called
 ↓
 React schedules update
@@ -243,6 +244,22 @@ React batches updates
 Component re-renders
 ↓
 New state becomes available
+```
+
+--- 
+
+# 14. Can you update state based on the current state? What is the correct way to do it?
+
+* const increment = () => setCount(prev => prev + 1);
+
+---
+
+# What is Strict Mode in React, and what issues does it help identify?
+
+* It renders components twice to detect side effects.
+* It warns about using deprecated lifecycle methods
+* unsafe refs, and legacy context APIs.
+* It also checks for unexpected side effects in useEffect.
 
 
 
