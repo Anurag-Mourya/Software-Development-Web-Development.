@@ -261,6 +261,41 @@ New state becomes available
 * unsafe refs, and legacy context APIs.
 * It also checks for unexpected side effects in useEffect.
 
+---
+
+# What are the different types of components in React? Explain Functional, Class, Pure, and Server Components.
+*  Functional Components, Class Components, Pure Components(A PureComponent is a special class component. It automatically implements shouldComponentUpdate with shallow comparison of props and state), React Server Components (RSC) (introduced in React 18/19, never ship JavaScript to the browser,), 
+
+---
+
+# 24. What are render props
+* A render prop is a prop that is a function. A component uses this function to decide what to render. The component shares its internal state or logic with the child through the function's arguments.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
